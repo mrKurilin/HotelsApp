@@ -27,4 +27,5 @@
     <string name="service_charge">Сервисный сбор</string>
     <string name="fuel_charge">Топливный сбор</string>
     <string name="to_pay">К оплате</string>
+    <string name="toggle_tourist_input_visibility">Показать/скрыть поля ввода данных туриста</string>
 </resources>

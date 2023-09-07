@@ -9,5 +9,5 @@ import ru.mrkurilin.roomFeature.domain.repository.RoomsRepository
 interface RoomsFeatureModule {
 
     @Binds
-    fun provideRoomsRepository(hotelsRepositoryImpl: RoomsRepositoryImpl): RoomsRepository
+    fun provideRoomsRepository(roomsRepository: RoomsRepositoryImpl): RoomsRepository
 }

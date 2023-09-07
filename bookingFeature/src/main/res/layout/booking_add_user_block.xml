@@ -20,7 +20,7 @@
         android:id="@+id/add_tourist_button"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="null"
+        android:background="@color/white"
         android:contentDescription="@string/add_tourist"
         android:src="@drawable/add" />
 
