@@ -3,9 +3,10 @@ plugins {
 }
 
 android {
-    namespace = ProjectConfig.namespace("hotelRoomFeature")
+    namespace = ProjectConfig.namespace("roomsFeature")
 }
 
 dependencies{
     implementation(project(":core:ui"))
+    implementation(project(":core:di"))
 }

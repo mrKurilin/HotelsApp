@@ -1,10 +1,11 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
-    compileSdk = ProjectConfig.compileSdk
+    compileSdk = 34
     namespace = ProjectConfig.namespace
     defaultConfig {
         applicationId = ProjectConfig.applicationId
@@ -23,34 +24,36 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("boolean", "isDebug", "false")
-        }
-        debug {
-            buildConfigField("boolean", "isDebug", "true")
         }
     }
 
     compileOptions {
-        sourceCompatibility = ProjectConfig.javaVersion
-        targetCompatibility = ProjectConfig.javaVersion
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
-        jvmTarget = ProjectConfig.jvmTarget
+        jvmTarget = "1.8"
     }
+    buildToolsVersion = "33.0.2"
 }
 
 dependencies {
     implementation(project(":core:navigation"))
     implementation(project(":core:ui"))
+    implementation(project(":core:di"))
     implementation(project(":hotelFeature"))
+    implementation(project(":roomsFeature"))
+    implementation(project(":bookingFeature"))
 
     implementation(libs.coreKtx)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintLayout)
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidJunit)
-    androidTestImplementation(libs.espressoCore)
+    androidTestImplementation(libs.bundles.androidTests)
     implementation(libs.navigationFragmentKtx)
+    implementation(libs.dagger)
+    implementation(libs.daggerAndroid)
+    ksp(libs.daggerCompiler)
 }

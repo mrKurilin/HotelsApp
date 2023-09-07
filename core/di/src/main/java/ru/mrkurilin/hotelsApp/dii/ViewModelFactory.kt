@@ -1,4 +1,4 @@
-package ru.mrkurilin.hotelsApp.di
+package ru.mrkurilin.hotelsApp.dii
 
 import androidx.lifecycle.AbstractSavedStateViewModelFactory
 import androidx.lifecycle.SavedStateHandle

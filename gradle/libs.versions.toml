@@ -3,7 +3,7 @@ coreKtx = "1.10.1"
 flexbox = "3.0.0"
 kotlin = "1.9.10"
 appcompat = "1.6.1"
-agp = "8.1.1"
+agp = "8.0.2"
 ktor = "2.3.3"
 coroutines = "1.7.3"
 lifecycle = "2.6.1"
@@ -71,6 +71,7 @@ kotlinSerializationPlugin = { group = "org.jetbrains.kotlin", name = "kotlin-ser
 kspGradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
 dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
+daggerAndroid = { group = "com.google.dagger", name = "dagger-android", version.ref = "dagger" }
 daggerCompiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
 
 [bundles]

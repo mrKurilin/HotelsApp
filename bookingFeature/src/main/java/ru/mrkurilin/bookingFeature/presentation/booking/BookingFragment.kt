@@ -5,12 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import ru.mrkurilin.bookingFeature.di.BookingFeatureComponentProvider
 import ru.mrkurilin.hotelsApp.bookingFeature.R
+import ru.mrkurilin.hotelsApp.dii.lazyViewModel
+import ru.mrkurilin.hotelsApp.dii.requireSubComponentsProvider
 
 class BookingFragment : Fragment() {
 
-    private val bookingViewModel by viewModels<BookingViewModel>()
+    private val bookingViewModel: BookingViewModel by lazyViewModel {
+        (requireSubComponentsProvider() as BookingFeatureComponentProvider)
+            .provideBookingFeatureComponent().bookingViewModel()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

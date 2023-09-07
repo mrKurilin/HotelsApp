@@ -1,4 +1,4 @@
-package ru.mrkurilin.hotelsApp.di
+package ru.mrkurilin.hotelsApp.dii
 
 import javax.inject.Qualifier
 
