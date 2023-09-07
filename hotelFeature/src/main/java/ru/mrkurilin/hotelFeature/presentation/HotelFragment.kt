@@ -12,6 +12,11 @@ class HotelFragment : Fragment() {
 
     private val hotelModel by viewModels<HotelViewModel>()
 
+    override fun onResume() {
+        super.onResume()
+        requireActivity().actionBar?.title = "Title"
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

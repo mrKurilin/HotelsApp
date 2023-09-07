@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/frame_16"
+    android:backgroundTint="@color/white"
+    android:columnCount="2"
+    android:padding="16dp"
+    android:useDefaultMargins="true">
+
+    <TextView
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="0.6"
+        android:text="@string/departure_from"
+        android:textColor="@color/ombre_grey" />
+
+    <TextView
+        android:id="@+id/departure_from_text_view"
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="1"
+        android:gravity="start"
+        tools:text="Санкт-Петербург" />
+
+    <TextView
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="0.6"
+        android:text="@string/country_city"
+        android:textColor="@color/ombre_grey" />
+
+    <TextView
+        android:id="@+id/country_city_text_view"
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="1"
+        android:gravity="start"
+        tools:text="Египет, Хургада" />
+
+    <TextView
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="0.6"
+        android:text="@string/dates"
+        android:textColor="@color/ombre_grey" />
+
+    <TextView
+        android:id="@+id/dates_text_view"
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="1"
+        android:gravity="start"
+        tools:text="19.09.2023 – 27.09.2023" />
+
+    <TextView
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="0.6"
+        android:text="@string/nights_count"
+        android:textColor="@color/ombre_grey" />
+
+    <TextView
+        android:id="@+id/nights_count_text_view"
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="1"
+        android:gravity="start"
+        tools:text="7 ночей" />
+
+    <TextView
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="0.6"
+        android:text="@string/hotel"
+        android:textColor="@color/ombre_grey" />
+
+    <TextView
+        android:id="@+id/hotel_text_view"
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="1"
+        android:gravity="start"
+        tools:text="Steigenberger Makadi" />
+
+    <TextView
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="0.6"
+        android:text="@string/room"
+        android:textColor="@color/ombre_grey" />
+
+    <TextView
+        android:id="@+id/room_text_view"
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="1"
+        android:gravity="start"
+        tools:text="Стандартный с видом на бассейн или сад" />
+
+    <TextView
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="0.6"
+        android:text="@string/nutrition"
+        android:textColor="@color/ombre_grey" />
+
+    <TextView
+        android:id="@+id/nutrition_text_view"
+        style="@style/TextAppearance.HotelsApp"
+        android:layout_width="0dp"
+        android:layout_columnWeight="1"
+        android:gravity="start"
+        tools:text="Всё включено" />
+
+</GridLayout>

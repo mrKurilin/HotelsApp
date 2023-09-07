@@ -41,6 +41,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:navigation"))
+    implementation(project(":core:ui"))
+
     implementation(libs.coreKtx)
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -48,4 +51,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidJunit)
     androidTestImplementation(libs.espressoCore)
+    implementation(libs.navigationFragmentKtx)
 }
