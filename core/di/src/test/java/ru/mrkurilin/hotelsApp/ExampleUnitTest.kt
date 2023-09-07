@@ -1,4 +1,4 @@
-package ru.mrkurilin.di
+package ru.mrkurilin.hotelsApp
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

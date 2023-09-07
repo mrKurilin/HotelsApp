@@ -1,5 +1,6 @@
 plugins {
     `android-setup`
+    `di-setup`
 }
 
 android {
@@ -8,4 +9,6 @@ android {
 
 dependencies{
     implementation(project(":core:ui"))
+
+    implementation(libs.flexbox)
 }

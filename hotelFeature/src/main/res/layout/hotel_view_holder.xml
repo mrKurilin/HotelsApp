@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ru.mrkurilin.hotelFeature.presentation.HotelFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ombre_grey">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/hotel_images_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/hotel_header_block"
+            layout="@layout/hotel_header_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/hotel_images_view_pager" />
+
+        <include
+            android:id="@+id/price_block"
+            layout="@layout/price_block_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/hotel_header_block" />
+
+        <include
+            android:id="@+id/about_hotel_block"
+            layout="@layout/about_hotel_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/choose_room_button"
+            app:layout_constraintTop_toBottomOf="@id/price_block" />
+
+        <Button
+            android:id="@+id/choose_room_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/frame_16"
+            android:backgroundTint="@color/blue"
+            android:text="@string/to_room_choose"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/about_hotel_block" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

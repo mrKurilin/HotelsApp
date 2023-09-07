@@ -2,7 +2,7 @@ plugins {
     id("com.android.library")
 }
 
-internal val Project.libs: VersionCatalog 
+internal val Project.libs: VersionCatalog
     get() = project.extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 android {
@@ -10,7 +10,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Dependencies.Compose.compilerVersion
+        kotlinCompilerExtensionVersion = libs.findVersion("compose").get().toString()
     }
 }
 

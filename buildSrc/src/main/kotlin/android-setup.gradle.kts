@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlinx-serialization")
 }
 
 internal val Project.libs: VersionCatalog get() =
@@ -49,6 +50,9 @@ dependencies {
     implementation(libs.findLibrary("coreKtx").get())
     implementation(libs.findLibrary("appcompat").get())
     implementation(libs.findLibrary("material").get())
+
+    implementation(libs.findLibrary("kotlinSerializationCore").get())
+    implementation(libs.findLibrary("kotlinSerializationJson").get())
 
     implementation(libs.findLibrary("coroutines").get())
 
