@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlinx-serialization")
+    id("com.google.devtools.ksp")
 }
 
 internal val Project.libs: VersionCatalog get() =
@@ -60,4 +61,7 @@ dependencies {
 
     testImplementation(libs.findBundle("tests").get())
     androidTestImplementation(libs.findBundle("androidTests").get())
+
+    implementation(libs.findLibrary("dagger").get())
+    ksp(libs.findLibrary("daggerCompiler").get())
 }

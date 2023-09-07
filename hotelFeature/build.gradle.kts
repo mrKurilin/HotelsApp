@@ -1,6 +1,5 @@
 plugins {
     `android-setup`
-    `di-setup`
 }
 
 android {
