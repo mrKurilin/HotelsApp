@@ -12,10 +12,11 @@ import ru.mrkurilin.hotelFeature.presentation.adapters.HotelsAdapter
 import ru.mrkurilin.hotelFeature.presentation.stateHolders.Effect
 import ru.mrkurilin.hotelFeature.presentation.stateHolders.State
 import ru.mrkurilin.hotelsApp.hotelFeature.R
+import ru.mrkurilin.navigation.navigate
 
-class HotelFragment : Fragment(R.layout.fragment_hotel) {
+class HotelsFragment : Fragment(R.layout.fragment_hotel) {
 
-    private val hotelViewModel by viewModels<HotelViewModel>()
+    private val hotelsViewModel by viewModels<HotelsViewModel>()
 
     private lateinit var hotelsRecyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
@@ -42,17 +43,17 @@ class HotelFragment : Fragment(R.layout.fragment_hotel) {
     }
 
     private suspend fun observeEffect() {
-        hotelViewModel.effectFlow.collect { effect ->
+        hotelsViewModel.effectFlow.collect { effect ->
             when (effect) {
                 Effect.GoToChoiceOfRooms -> {
-
+                    navigate(R.id.action_hotelsFragment_to_roomsFragment)
                 }
             }
         }
     }
 
     private suspend fun observeState() {
-        hotelViewModel.state.collect { state ->
+        hotelsViewModel.state.collect { state ->
             when (state) {
                 is State.Loaded -> {
                     hotelsAdapter.updateHotels(state.hotels)

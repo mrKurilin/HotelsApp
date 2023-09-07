@@ -14,7 +14,7 @@ import ru.mrkurilin.hotelFeature.presentation.stateHolders.Effect
 import ru.mrkurilin.hotelFeature.presentation.stateHolders.State
 import javax.inject.Inject
 
-class HotelViewModel @Inject constructor(
+class HotelsViewModel @Inject constructor(
     private val getHotelsUseCase: GetHotelsUseCase,
 ) : ViewModel() {
 

@@ -43,6 +43,7 @@ android {
 dependencies {
     implementation(project(":core:navigation"))
     implementation(project(":core:ui"))
+    implementation(project(":hotelFeature"))
 
     implementation(libs.coreKtx)
     implementation(libs.appcompat)
