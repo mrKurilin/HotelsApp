@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/frame_16"
+    android:backgroundTint="@color/secondary_background"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:showDividers="middle">
+
+    <ru.mrkurilin.hotelFeature.presentation.views.AboutHotelButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:description="Самое необходимое"
+        app:icon="@drawable/emoji_happy"
+        app:title="Удобства" />
+
+    <ru.mrkurilin.hotelFeature.presentation.views.AboutHotelButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:description="Самое необходимое"
+        app:icon="@drawable/tick"
+        app:title="Что включено" />
+
+    <ru.mrkurilin.hotelFeature.presentation.views.AboutHotelButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:description="Самое необходимое"
+        app:icon="@drawable/close"
+        app:title="Что не включено" />
+
+</LinearLayout>

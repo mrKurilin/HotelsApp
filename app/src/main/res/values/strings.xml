@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">HotelsApp</string>
+    <string name="payment_header">Ваш заказ принят в работу</string>
+    <string name="payment_text">Подтверждение заказа №104893 может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.</string>
+    <string name="payment_super">Супер!</string>
+    <string name="departure_from">Вылет из</string>
+    <string name="country_city">Страна, город</string>
+    <string name="dates">Даты</string>
+    <string name="nights_count">Кол-во ночей</string>
+    <string name="hotel">Отель</string>
+    <string name="room">Номер</string>
+    <string name="nutrition">Питание</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="hint_phone">+7 (987) 654-32-10</string>
+    <string name="email">Почта</string>
+    <string name="example_mail">example@mail.ru</string>
+    <string name="buyer_info">Информация о покупателе</string>
+    <string name="buyer_info_data_safety">Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту</string>
 </resources>
