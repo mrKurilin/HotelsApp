@@ -1,3 +1,8 @@
 package ru.mrkurilin.roomFeature.presentation.stateHolders
 
-sealed class RoomsAction
+sealed interface RoomsAction {
+
+    data class GoToBookingPressed(
+        val roomName: String
+    ) : RoomsAction
+}

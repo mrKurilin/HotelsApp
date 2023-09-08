@@ -1,3 +1,8 @@
 package ru.mrkurilin.roomFeature.presentation.stateHolders
 
-sealed class RoomsEffect
+sealed interface RoomsEffect {
+    data class GoToBooking(
+        val hotelName: String,
+        val roomName: String,
+    ) : RoomsEffect
+}

@@ -25,7 +25,6 @@ class HotelsFragment : Fragment(R.layout.fragment_hotel) {
 
     private lateinit var hotelsRecyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
-
     private lateinit var hotelsAdapter: HotelsAdapter
 
     override fun onResume() {

@@ -1,9 +1,12 @@
 package ru.mrkurilin.roomFeature.presentation.stateHolders
 
-sealed class RoomsState {
-    data object Loading : RoomsState()
+import ru.mrkurilin.roomFeature.domain.model.Room
+
+sealed interface RoomsState {
+
+    data object Loading : RoomsState
 
     data class Loaded(
-        val name: String
-    ) : RoomsState()
+        val rooms: List<Room>
+    ) : RoomsState
 }

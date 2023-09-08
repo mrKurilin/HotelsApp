@@ -2,9 +2,11 @@ package ru.mrkurilin.hotelFeature.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import ru.mrkurilin.hotelFeature.domain.usecase.GetHotelsUseCase
 import ru.mrkurilin.hotelFeature.presentation.stateHolders.Action
@@ -19,8 +21,8 @@ class HotelsViewModel @Inject constructor(
     private val _state: MutableStateFlow<State> = MutableStateFlow(State.Loading)
     val state: StateFlow<State> = _state.asStateFlow()
 
-    private val _effectFlow: MutableStateFlow<Effect> = MutableStateFlow(Effect.Idle)
-    val effectFlow = _effectFlow.asStateFlow()
+    private val _effectFlow: Channel<Effect> = Channel(Channel.BUFFERED)
+    val effectFlow = _effectFlow.receiveAsFlow()
 
     init {
         viewModelScope.launch {
@@ -34,7 +36,7 @@ class HotelsViewModel @Inject constructor(
         viewModelScope.launch {
             when (action) {
                 is Action.ChoiceOfRoomsClicked -> {
-                    _effectFlow.emit(Effect.GoToChoiceOfRooms(action.hotelName))
+                    _effectFlow.send(Effect.GoToChoiceOfRooms(action.hotelName))
                 }
             }
         }
