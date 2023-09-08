@@ -5,8 +5,9 @@ plugins {
     id("com.google.devtools.ksp")
 }
 
-internal val Project.libs: VersionCatalog get() =
-    project.extensions.getByType<VersionCatalogsExtension>().named("libs")
+internal val Project.libs: VersionCatalog
+    get() =
+        project.extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 android {
     compileSdk = ProjectConfig.compileSdk
@@ -64,4 +65,8 @@ dependencies {
 
     implementation(libs.findLibrary("dagger").get())
     ksp(libs.findLibrary("daggerCompiler").get())
+
+    implementation(libs.findLibrary("retrofit").get())
+
+    implementation(libs.findLibrary("circleindicator").get())
 }

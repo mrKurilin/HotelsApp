@@ -5,5 +5,5 @@ import ru.mrkurilin.hotelFeature.domain.model.Hotel
 
 interface HotelsRepository {
 
-    fun getHotels(): Flow<List<Hotel>>
+    suspend fun getHotels(): Flow<List<Hotel>>
 }

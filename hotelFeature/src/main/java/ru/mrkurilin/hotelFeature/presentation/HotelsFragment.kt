@@ -11,8 +11,8 @@ import ru.mrkurilin.hotelFeature.di.HotelsFeatureComponentProvider
 import ru.mrkurilin.hotelFeature.presentation.adapters.HotelsAdapter
 import ru.mrkurilin.hotelFeature.presentation.stateHolders.Effect
 import ru.mrkurilin.hotelFeature.presentation.stateHolders.State
-import ru.mrkurilin.hotelsApp.dii.lazyViewModel
-import ru.mrkurilin.hotelsApp.dii.requireSubComponentsProvider
+import ru.mrkurilin.hotelsApp.di.lazyViewModel
+import ru.mrkurilin.hotelsApp.di.requireSubComponentsProvider
 import ru.mrkurilin.hotelsApp.hotelFeature.R
 import ru.mrkurilin.navigation.navigate
 
@@ -26,7 +26,9 @@ class HotelsFragment : Fragment(R.layout.fragment_hotel) {
     private lateinit var hotelsRecyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
 
-    private val hotelsAdapter = HotelsAdapter()
+    private val hotelsAdapter = HotelsAdapter(
+        onAction = (hotelsViewModel::onAction),
+    )
 
     override fun onResume() {
         super.onResume()

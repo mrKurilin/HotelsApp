@@ -3,5 +3,5 @@ plugins {
 }
 
 android {
-    namespace = ProjectConfig.namespace("dii")
+    namespace = ProjectConfig.namespace("di")
 }

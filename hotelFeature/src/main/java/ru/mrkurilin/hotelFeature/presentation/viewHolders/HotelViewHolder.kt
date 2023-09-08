@@ -6,12 +6,14 @@ import com.google.android.flexbox.FlexboxLayoutManager
 import ru.mrkurilin.hotelFeature.domain.model.Hotel
 import ru.mrkurilin.hotelFeature.presentation.adapters.PeculiaritiesAdapter
 import ru.mrkurilin.hotelsApp.hotelFeature.databinding.HotelViewHolderBinding
+import ru.mrkurilin.hotelsApp.ui.imageSlider.ImageSliderAdapter
 
 class HotelViewHolder(
-    private val binding: HotelViewHolderBinding,
+    val binding: HotelViewHolderBinding,
 ) : RecyclerView.ViewHolder(binding.root) {
 
     private val peculiaritiesAdapter = PeculiaritiesAdapter()
+    private val imageSliderAdapter = ImageSliderAdapter()
 
     init {
         binding.aboutHotelBlock.peculiaritiesRecyclerView.adapter = peculiaritiesAdapter
@@ -20,6 +22,7 @@ class HotelViewHolder(
                 this.flexDirection = FlexDirection.ROW
             }
         }
+        binding.imagesSliderViewpager.adapter = imageSliderAdapter
     }
 
     fun bind(hotel: Hotel) {
@@ -30,5 +33,6 @@ class HotelViewHolder(
         binding.priceBlock.priceForTextView.text = hotel.priceForIt
         peculiaritiesAdapter.setPeculiarities(hotel.peculiarities)
         binding.aboutHotelBlock.descriptionTextView.text = hotel.description
+        imageSliderAdapter.setItems(hotel.imageUrls)
     }
 }

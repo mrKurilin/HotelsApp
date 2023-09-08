@@ -15,6 +15,7 @@ lifecycle-livedata-ktx = "2.6.1"
 kotlinSerialization = "1.5.1"
 ksp = "1.9.10-1.0.13"
 dagger = "2.48"
+retrofit = "2.9.0"
 
 [libraries]
 androidGradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
@@ -74,11 +75,23 @@ dagger = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" 
 daggerAndroid = { group = "com.google.dagger", name = "dagger-android", version.ref = "dagger" }
 daggerCompiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
 
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+okHttp = { group = "com.squareup.okhttp3", name = "okhttp", version = "5.0.0-alpha.11" }
+loggingInterceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version = "4.11.0" }
+serializer = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version = "0.8.0" }
+scalars = { group = "com.squareup.retrofit2", name = "converter-scalars", version.ref = "retrofit" }
+
+circleindicator = { group = "me.relex", name = "circleindicator", version = "2.1.6" }
+
+glide = { group = "com.github.bumptech.glide", name = "glide", version = "4.16.0" }
+
+
 [bundles]
 ktor = ["ktor-okhttp", "ktor-negotiation", "ktor-serialization", "ktor-logging"]
 tests = ["junit", "mockk", "coroutinesTest", "turbine"]
 androidTests = ["androidJunit", "espressoCore"]
 compose = ["uiTooling", "composeMaterial", "material3", "preview", "runtime", "compiler", "activity", "statusbar"]
+network = ["retrofit", "okHttp", "loggingInterceptor", "serializer", "scalars"]
 
 [plugins]
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

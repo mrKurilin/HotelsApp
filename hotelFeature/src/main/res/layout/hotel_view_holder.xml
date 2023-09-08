@@ -9,12 +9,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/ombre_grey">
+        android:background="@color/primary_background">
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/hotel_images_view_pager"
+            android:id="@+id/images_slider_viewpager"
             android:layout_width="match_parent"
             android:layout_height="260dp"
+            android:background="@color/white"
+            android:padding="16dp"
             app:layout_constraintTop_toTopOf="parent" />
 
         <include
@@ -23,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/hotel_images_view_pager" />
+            app:layout_constraintTop_toBottomOf="@id/images_slider_viewpager" />
 
         <include
             android:id="@+id/price_block"
@@ -46,6 +48,7 @@
             android:id="@+id/choose_room_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_margin="16dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/frame_16"
             android:backgroundTint="@color/blue"

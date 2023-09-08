@@ -2,6 +2,7 @@ package ru.mrkurilin.hotelFeature.data.remote.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import ru.mrkurilin.hotelFeature.domain.model.Hotel
 
 @Serializable
 data class HotelResponse(
@@ -23,4 +24,20 @@ data class HotelResponse(
     val rating: Int,
     @SerialName("rating_name")
     val ratingName: String
-)
+) {
+
+    fun toHotel(): Hotel {
+        return Hotel(
+            address = address,
+            id = id,
+            imageUrls = imageUrls,
+            minimalPrice = minimalPrice,
+            name = name,
+            priceForIt = priceForIt,
+            rating = rating,
+            ratingName = ratingName,
+            description = aboutTheHotel.description,
+            peculiarities = aboutTheHotel.peculiarities,
+        )
+    }
+}

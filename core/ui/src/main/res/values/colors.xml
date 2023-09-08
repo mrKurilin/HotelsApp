@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="yellow_background">#FFC700</color>
+    <color name="yellow_background">#50FFC700</color>
     <color name="yellow_front">#FFA800</color>
     <color name="primary_background">#F6F6F9</color>
     <color name="secondary_background">#FBFBFC</color>

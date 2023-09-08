@@ -1,4 +1,4 @@
-package ru.mrkurilin.hotelsApp.dii
+package ru.mrkurilin.hotelsApp.di
 
 interface SubComponentsProviderProvider {
 

@@ -5,12 +5,17 @@ import dagger.BindsInstance
 import dagger.Component
 import ru.mrkurilin.bookingFeature.di.BookingFeatureComponent
 import ru.mrkurilin.hotelFeature.di.HotelsFeatureComponent
+import ru.mrkurilin.hotelsApp.di.AppScope
+import ru.mrkurilin.hotelsApp.di.ApplicationContext
+import ru.mrkurilin.hotelsapp.di.modules.NetworkModule
 import ru.mrkurilin.hotelsapp.di.modules.SubComponentsModule
 import ru.mrkurilin.roomFeature.di.RoomsFeatureComponent
 
+@AppScope
 @Component(
     modules = [
         SubComponentsModule::class,
+        NetworkModule::class,
     ]
 )
 interface AppComponent {
@@ -20,6 +25,7 @@ interface AppComponent {
 
         fun create(
             @BindsInstance
+            @ApplicationContext
             context: Context,
         ): AppComponent
     }

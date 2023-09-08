@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.mrkurilin.bookingFeature.di.BookingFeatureComponentProvider
 import ru.mrkurilin.hotelsApp.bookingFeature.R
-import ru.mrkurilin.hotelsApp.dii.lazyViewModel
-import ru.mrkurilin.hotelsApp.dii.requireSubComponentsProvider
+import ru.mrkurilin.hotelsApp.di.lazyViewModel
+import ru.mrkurilin.hotelsApp.di.requireSubComponentsProvider
 
 class BookingFragment : Fragment() {
 

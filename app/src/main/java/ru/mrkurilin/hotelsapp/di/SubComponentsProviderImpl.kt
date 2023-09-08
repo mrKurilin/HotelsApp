@@ -4,7 +4,7 @@ import ru.mrkurilin.bookingFeature.di.BookingFeatureComponent
 import ru.mrkurilin.bookingFeature.di.BookingFeatureComponentProvider
 import ru.mrkurilin.hotelFeature.di.HotelsFeatureComponent
 import ru.mrkurilin.hotelFeature.di.HotelsFeatureComponentProvider
-import ru.mrkurilin.hotelsApp.dii.SubComponentsProvider
+import ru.mrkurilin.hotelsApp.di.SubComponentsProvider
 import ru.mrkurilin.roomFeature.di.RoomsFeatureComponent
 import ru.mrkurilin.roomFeature.di.RoomsFeatureComponentProvider
 

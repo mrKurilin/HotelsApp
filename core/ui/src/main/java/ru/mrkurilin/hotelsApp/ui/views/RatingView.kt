@@ -6,7 +6,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import ru.mrkurilin.hotelsApp.ui.R
 
-class RatingView(
+class RatingView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0

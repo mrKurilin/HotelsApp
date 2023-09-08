@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/frame_5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
     android:orientation="horizontal"
     android:padding="5dp"
-    android:gravity="center"
-    tools:parentTag="android.widget.LinearLayout"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content">
-
-    <ImageView
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        tools:ignore="ContentDescription"
-        tools:src="@drawable/star" />
+    tools:parentTag="android.widget.LinearLayout">
 
     <TextView
         android:id="@+id/rating_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableStart="@drawable/star"
         android:textColor="@color/yellow_front"
-        tools:text="5 Превосходно" />
+        tools:text="5 Превосходно"
+        tools:ignore="UseCompatTextViewDrawableXml" />
 
 </merge>

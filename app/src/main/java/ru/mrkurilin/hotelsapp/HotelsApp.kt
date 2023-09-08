@@ -1,8 +1,8 @@
 package ru.mrkurilin.hotelsapp
 
 import android.app.Application
-import ru.mrkurilin.hotelsApp.dii.SubComponentsProvider
-import ru.mrkurilin.hotelsApp.dii.SubComponentsProviderProvider
+import ru.mrkurilin.hotelsApp.di.SubComponentsProvider
+import ru.mrkurilin.hotelsApp.di.SubComponentsProviderProvider
 import ru.mrkurilin.hotelsapp.di.AppComponent
 import ru.mrkurilin.hotelsapp.di.DaggerAppComponent
 import ru.mrkurilin.hotelsapp.di.SubComponentsProviderImpl

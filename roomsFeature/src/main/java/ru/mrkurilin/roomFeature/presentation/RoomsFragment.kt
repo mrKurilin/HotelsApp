@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.mrkurilin.hotelsApp.dii.lazyViewModel
-import ru.mrkurilin.hotelsApp.dii.requireSubComponentsProvider
+import ru.mrkurilin.hotelsApp.di.lazyViewModel
+import ru.mrkurilin.hotelsApp.di.requireSubComponentsProvider
 import ru.mrkurilin.hotelsApp.roomsFeature.R
 import ru.mrkurilin.roomFeature.di.RoomsFeatureComponentProvider
 

@@ -56,4 +56,8 @@ dependencies {
     implementation(libs.dagger)
     implementation(libs.daggerAndroid)
     ksp(libs.daggerCompiler)
+
+    implementation(libs.kotlinSerializationCore)
+    implementation(libs.kotlinSerializationJson)
+    implementation(libs.bundles.network)
 }

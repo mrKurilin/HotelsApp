@@ -3,6 +3,7 @@ package ru.mrkurilin.hotelFeature.di
 import dagger.Subcomponent
 import ru.mrkurilin.hotelFeature.presentation.HotelsViewModel
 
+@HotelsFeatureScope
 @Subcomponent(
     modules = [
         HotelsFeatureModule::class

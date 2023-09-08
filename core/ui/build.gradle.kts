@@ -5,3 +5,7 @@ plugins {
 android {
     namespace = ProjectConfig.namespace("ui")
 }
+
+dependencies {
+    implementation(libs.glide)
+}
