@@ -55,7 +55,6 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
         touristsAdapter = TouristsAdapter()
 
         binding.touristsRecyclerView.adapter = touristsAdapter
-        binding.touristsRecyclerView.isNestedScrollingEnabled = false
 
         binding.bookingAddUserBlock.addTouristButton.setOnClickListener {
             bookingViewModel.onAction(BookingAction.AddTouristPressed)

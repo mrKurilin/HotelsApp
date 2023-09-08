@@ -51,13 +51,14 @@
         app:layout_constraintTop_toBottomOf="@id/header" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/super_button"
         style="@style/TextAppearance.HotelsApp"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:id="@+id/super_button"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@drawable/frame_16"
         android:backgroundTint="@color/blue"
-        android:gravity="center"
         android:text="@string/payment_super"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent" />
