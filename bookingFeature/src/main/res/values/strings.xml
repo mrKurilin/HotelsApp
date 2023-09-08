@@ -28,4 +28,6 @@
     <string name="fuel_charge">Топливный сбор</string>
     <string name="to_pay">К оплате</string>
     <string name="toggle_tourist_input_visibility">Показать/скрыть поля ввода данных туриста</string>
+    <string name="payment_success">Заказ оплачен</string>
+    <string name="booking">Бронирование</string>
 </resources>
