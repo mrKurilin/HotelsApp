@@ -62,7 +62,7 @@
             android:textColor="@color/ombre_grey" />
 
         <TextView
-            android:id="@+id/to_pay_text_view"
+            android:id="@+id/total_text_view"
             style="@style/TextAppearance.HotelsApp"
             android:gravity="end"
             tools:text="186 600 Р" />

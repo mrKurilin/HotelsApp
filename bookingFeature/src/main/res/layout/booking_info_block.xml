@@ -77,7 +77,7 @@
         android:textColor="@color/ombre_grey" />
 
     <TextView
-        android:id="@+id/hotel_text_view"
+        android:id="@+id/hotel_name_text_view"
         style="@style/TextAppearance.HotelsApp"
         android:layout_width="0dp"
         android:layout_columnWeight="1"
@@ -92,7 +92,7 @@
         android:textColor="@color/ombre_grey" />
 
     <TextView
-        android:id="@+id/room_text_view"
+        android:id="@+id/room_name_text_view"
         style="@style/TextAppearance.HotelsApp"
         android:layout_width="0dp"
         android:layout_columnWeight="1"
