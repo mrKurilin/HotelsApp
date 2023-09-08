@@ -46,14 +46,19 @@ class HotelsFragment : Fragment(R.layout.fragment_hotel) {
         hotelsRecyclerView.adapter = hotelsAdapter
 
         lifecycleScope.launch {
-            observeState()
-            observeEffect()
+            launch {
+                observeState()
+            }
+            launch {
+                observeEffect()
+            }
         }
     }
 
     private suspend fun observeEffect() {
         hotelsViewModel.effectFlow.collect { effect ->
             when (effect) {
+                Effect.Idle -> {}
                 is Effect.GoToChoiceOfRooms -> {
                     navigate(
                         actionId = R.id.action_hotelsFragment_to_roomsFragment,
