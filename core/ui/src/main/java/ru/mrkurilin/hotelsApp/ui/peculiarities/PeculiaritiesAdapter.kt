@@ -1,11 +1,10 @@
-package ru.mrkurilin.hotelFeature.presentation.adapters
+package ru.mrkurilin.hotelsApp.ui.peculiarities
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import ru.mrkurilin.hotelFeature.presentation.viewHolders.PeculiaritiesViewHolder
-import ru.mrkurilin.hotelsApp.hotelFeature.databinding.PeculiaritiesViewHolderBinding
+import ru.mrkurilin.hotelsApp.ui.databinding.PeculiaritiesViewHolderBinding
 import ru.mrkurilin.hotelsApp.ui.views.GenericDiffUtilCallback
 
 class PeculiaritiesAdapter : RecyclerView.Adapter<PeculiaritiesViewHolder>() {

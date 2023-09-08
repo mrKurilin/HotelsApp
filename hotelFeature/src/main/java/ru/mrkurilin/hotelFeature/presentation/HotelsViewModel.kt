@@ -35,8 +35,8 @@ class HotelsViewModel @Inject constructor(
     fun onAction(action: Action) {
         viewModelScope.launch {
             when (action) {
-                Action.ChoiceOfRoomsClicked -> {
-                    _effectFlow.send(Effect.GoToChoiceOfRooms)
+                is Action.ChoiceOfRoomsClicked -> {
+                    _effectFlow.send(Effect.GoToChoiceOfRooms(action.hotelName))
                 }
             }
         }

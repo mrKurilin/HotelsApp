@@ -81,8 +81,6 @@ loggingInterceptor = { group = "com.squareup.okhttp3", name = "logging-intercept
 serializer = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version = "0.8.0" }
 scalars = { group = "com.squareup.retrofit2", name = "converter-scalars", version.ref = "retrofit" }
 
-circleindicator = { group = "me.relex", name = "circleindicator", version = "2.1.6" }
-
 glide = { group = "com.github.bumptech.glide", name = "glide", version = "4.16.0" }
 
 

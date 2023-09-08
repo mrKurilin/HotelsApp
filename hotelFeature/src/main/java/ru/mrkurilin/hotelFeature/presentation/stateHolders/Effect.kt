@@ -2,5 +2,7 @@ package ru.mrkurilin.hotelFeature.presentation.stateHolders
 
 sealed class Effect {
 
-    data object GoToChoiceOfRooms : Effect()
+    data class GoToChoiceOfRooms(
+        val hotelName: String
+    ) : Effect()
 }

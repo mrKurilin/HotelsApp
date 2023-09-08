@@ -26,9 +26,7 @@ class HotelsFragment : Fragment(R.layout.fragment_hotel) {
     private lateinit var hotelsRecyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
 
-    private val hotelsAdapter = HotelsAdapter(
-        onAction = (hotelsViewModel::onAction),
-    )
+    private lateinit var hotelsAdapter: HotelsAdapter
 
     override fun onResume() {
         super.onResume()
@@ -37,6 +35,10 @@ class HotelsFragment : Fragment(R.layout.fragment_hotel) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        hotelsAdapter = HotelsAdapter(
+            onAction = (hotelsViewModel::onAction)
+        )
 
         hotelsRecyclerView = requireView().findViewById(R.id.hotels_recycler_view)
         progressBar = requireView().findViewById(R.id.progress_bar)
@@ -52,8 +54,11 @@ class HotelsFragment : Fragment(R.layout.fragment_hotel) {
     private suspend fun observeEffect() {
         hotelsViewModel.effectFlow.collect { effect ->
             when (effect) {
-                Effect.GoToChoiceOfRooms -> {
-                    navigate(R.id.action_hotelsFragment_to_roomsFragment)
+                is Effect.GoToChoiceOfRooms -> {
+                    navigate(
+                        actionId = R.id.action_hotelsFragment_to_roomsFragment,
+                        data = effect.hotelName
+                    )
                 }
             }
         }

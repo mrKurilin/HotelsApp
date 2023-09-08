@@ -67,6 +67,4 @@ dependencies {
     ksp(libs.findLibrary("daggerCompiler").get())
 
     implementation(libs.findLibrary("retrofit").get())
-
-    implementation(libs.findLibrary("circleindicator").get())
 }

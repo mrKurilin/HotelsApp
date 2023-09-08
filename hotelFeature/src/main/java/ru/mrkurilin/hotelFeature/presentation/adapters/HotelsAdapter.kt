@@ -25,7 +25,11 @@ class HotelsAdapter(
             )
         )
         hotelViewHolder.binding.chooseRoomButton.setOnClickListener {
-            onAction(Action.ChoiceOfRoomsClicked)
+            onAction(
+                Action.ChoiceOfRoomsClicked(
+                    hotels[hotelViewHolder.adapterPosition].name
+                )
+            )
         }
         return hotelViewHolder
     }

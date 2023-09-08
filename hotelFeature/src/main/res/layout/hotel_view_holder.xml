@@ -49,12 +49,13 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_margin="16dp"
-            android:layout_marginTop="8dp"
             android:background="@drawable/frame_16"
             android:backgroundTint="@color/blue"
             android:text="@string/to_room_choose"
             android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/about_hotel_block" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

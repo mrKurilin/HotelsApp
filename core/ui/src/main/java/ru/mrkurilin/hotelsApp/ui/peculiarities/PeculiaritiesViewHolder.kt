@@ -1,7 +1,7 @@
-package ru.mrkurilin.hotelFeature.presentation.viewHolders
+package ru.mrkurilin.hotelsApp.ui.peculiarities
 
 import androidx.recyclerview.widget.RecyclerView
-import ru.mrkurilin.hotelsApp.hotelFeature.databinding.PeculiaritiesViewHolderBinding
+import ru.mrkurilin.hotelsApp.ui.databinding.PeculiaritiesViewHolderBinding
 
 class PeculiaritiesViewHolder(
     private val peculiaritiesViewHolderBinding: PeculiaritiesViewHolderBinding

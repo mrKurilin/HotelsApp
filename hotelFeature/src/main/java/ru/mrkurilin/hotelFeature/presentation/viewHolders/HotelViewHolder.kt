@@ -4,9 +4,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexboxLayoutManager
 import ru.mrkurilin.hotelFeature.domain.model.Hotel
-import ru.mrkurilin.hotelFeature.presentation.adapters.PeculiaritiesAdapter
 import ru.mrkurilin.hotelsApp.hotelFeature.databinding.HotelViewHolderBinding
 import ru.mrkurilin.hotelsApp.ui.imageSlider.ImageSliderAdapter
+import ru.mrkurilin.hotelsApp.ui.peculiarities.PeculiaritiesAdapter
 
 class HotelViewHolder(
     val binding: HotelViewHolderBinding,
