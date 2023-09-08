@@ -1,3 +1,3 @@
 package ru.mrkurilin.roomFeature.presentation.stateHolders
 
-sealed class Action
+sealed class RoomsAction

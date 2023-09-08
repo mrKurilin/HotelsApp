@@ -1,9 +1,9 @@
 package ru.mrkurilin.roomFeature.presentation.stateHolders
 
-sealed class State {
-    data object Loading : State()
+sealed class RoomsState {
+    data object Loading : RoomsState()
 
     data class Loaded(
         val name: String
-    ) : State()
+    ) : RoomsState()
 }
