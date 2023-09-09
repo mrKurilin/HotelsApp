@@ -25,7 +25,12 @@ class TouristViewHolder(
 
     fun bind(tourist: Tourist) {
         with(touristViewHolderBinding) {
-            val headerText = "${tourist.id + 1}й турист"
+            val headerText = when (tourist.id) {
+                0 -> "Первый турист"
+                1 -> "Второй турист"
+                2 -> "Третий турист"
+                else -> "${tourist.id + 1}й турист"
+            }
             touristHeader.text = headerText
             nameTextField.setText(tourist.name)
             secondNameTextField.setText(tourist.secondName)

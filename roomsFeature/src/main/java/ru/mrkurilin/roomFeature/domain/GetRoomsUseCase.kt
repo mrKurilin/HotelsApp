@@ -9,7 +9,7 @@ class GetRoomsUseCase @Inject constructor(
     private val roomsRepository: RoomsRepository
 ) {
 
-    suspend operator fun invoke(hotelName: String): Flow<List<Room>> {
-        return roomsRepository.getRooms(hotelName)
+    suspend operator fun invoke(): Flow<List<Room>> {
+        return roomsRepository.getRooms()
     }
 }

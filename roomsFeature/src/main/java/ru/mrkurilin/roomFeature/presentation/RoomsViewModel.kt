@@ -30,7 +30,7 @@ class RoomsViewModel @Inject constructor(
         hotelName ?: return
         this.hotelName = hotelName
         viewModelScope.launch {
-            getRoomsUseCase(hotelName).collect { list ->
+            getRoomsUseCase().collect { list ->
                 _state.emit(RoomsState.Loaded(list))
             }
         }

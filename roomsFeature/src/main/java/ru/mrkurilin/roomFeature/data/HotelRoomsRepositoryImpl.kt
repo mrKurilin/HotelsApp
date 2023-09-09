@@ -15,7 +15,7 @@ class HotelRoomsRepositoryImpl @Inject constructor(
     private val roomsApiService: RoomsApiService,
 ) : RoomsRepository {
 
-    override suspend fun getRooms(hotelName: String): Flow<List<Room>> {
+    override suspend fun getRooms(): Flow<List<Room>> {
         return withContext(Dispatchers.IO) {
             flowOf(roomsApiService.getRooms().rooms)
         }

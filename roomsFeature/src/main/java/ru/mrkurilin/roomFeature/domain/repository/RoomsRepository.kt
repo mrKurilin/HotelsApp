@@ -5,5 +5,5 @@ import ru.mrkurilin.roomFeature.domain.model.Room
 
 interface RoomsRepository {
 
-    suspend fun getRooms(hotelName: String): Flow<List<Room>>
+    suspend fun getRooms(): Flow<List<Room>>
 }
