@@ -1,6 +1,7 @@
 package ru.mrkurilin.bookingFeature.presentation.booking
 
 import android.os.Bundle
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -64,23 +65,13 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
         }
 
         touristsAdapter = TouristsAdapter()
-
         binding.touristsRecyclerView.adapter = touristsAdapter
 
         binding.bookingAddUserBlock.addTouristButton.setOnClickListener {
             bookingViewModel.onAction(BookingAction.AddTouristPressed)
         }
 
-        binding.bookingBuyerInfoBlock.phoneTextField.doOnTextChanged { text, _, _, _ ->
-            bookingViewModel.onAction(
-                BookingAction.BuyerDataChanged(BuyerInputData.Phone(text.toString()))
-            )
-        }
-        binding.bookingBuyerInfoBlock.emailTextField.doOnTextChanged { text, _, _, _ ->
-            bookingViewModel.onAction(
-                BookingAction.BuyerDataChanged(BuyerInputData.Email(text.toString()))
-            )
-        }
+        setupBookingBuyerInfoBlock()
 
         binding.goToPaymentButton.setOnClickListener {
             bookingViewModel.onAction(BookingAction.GoToPaymentPressed)
@@ -92,6 +83,35 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
             launch { observeBuyerInfo() }
             launch { observeTourists() }
             launch { observePaymentInfo() }
+        }
+    }
+
+    private fun setupBookingBuyerInfoBlock() {
+        with(binding.bookingBuyerInfoBlock) {
+            phoneTextField.doOnTextChanged { text, _, _, _ ->
+                bookingViewModel.onAction(
+                    BookingAction.BuyerDataChanged(BuyerInputData.Phone(text.toString()))
+                )
+            }
+            emailTextField.doOnTextChanged { text, _, _, _ ->
+                bookingViewModel.onAction(
+                    BookingAction.BuyerDataChanged(BuyerInputData.Email(text.toString()))
+                )
+            }
+
+            emailTextField.setOnFocusChangeListener { view, hasFocus ->
+                if (
+                    view is TextInputEditText
+                    &&
+                    view.text?.isEmpty() == false
+                    &&
+                    !hasFocus
+                    &&
+                    !Patterns.EMAIL_ADDRESS.matcher(view.text.toString()).matches()
+                ) {
+                    view.error = getString(R.string.invalid_email)
+                }
+            }
         }
     }
 
