@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import ru.mrkurilin.bookingFeature.data.remote.BookingApiService
 import ru.mrkurilin.bookingFeature.domain.model.Buyer
+import ru.mrkurilin.bookingFeature.domain.model.BuyerInputData
 import ru.mrkurilin.bookingFeature.domain.model.Tourist
 import ru.mrkurilin.bookingFeature.presentation.booking.stateHolders.BookingAction
 import ru.mrkurilin.bookingFeature.presentation.booking.stateHolders.BookingEffect
@@ -51,8 +52,20 @@ class BookingViewModel @Inject constructor(
                 }
 
                 is BookingAction.BuyerDataChanged -> {
-
+                    updateBuyerData(bookingAction.buyerInputData)
                 }
+            }
+        }
+    }
+
+    private fun updateBuyerData(buyerInputData: BuyerInputData) {
+        when (buyerInputData) {
+            is BuyerInputData.Email -> {
+                _buyerInfo.value = _buyerInfo.value.copy(email = buyerInputData.value)
+            }
+
+            is BuyerInputData.Phone -> {
+                _buyerInfo.value = _buyerInfo.value.copy(phoneNumber = buyerInputData.value)
             }
         }
     }

@@ -2,4 +2,6 @@
 <resources>
     <string name="rating_text">%1$d %2$s</string>
     <string name="hotel_image">Фото отеля</string>
+
+    <string name="masked_phone_number">+7 (%1$s%2$s%3$s) %4$s%5$s%6$s-%7$s%8$s-%9$s%10$s</string>
 </resources>
