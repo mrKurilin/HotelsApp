@@ -35,4 +35,5 @@
     <string name="nights_count_data">%1$d ночей</string>
     <string name="tour_price">%1$d</string>
     <string name="price">%1$d Р</string>
+    <string name="field_should_not_be_empty">Поле не должно быть пустым</string>
 </resources>

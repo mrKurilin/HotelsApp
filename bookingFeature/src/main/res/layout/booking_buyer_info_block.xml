@@ -32,7 +32,7 @@
             android:maxLength="19"
             android:maxLines="1"
             android:nextFocusDown="@id/email_text_field"
-            android:paddingStart="16dp" />
+            android:padding="16dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

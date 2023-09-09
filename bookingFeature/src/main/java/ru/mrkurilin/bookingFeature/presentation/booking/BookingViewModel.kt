@@ -48,7 +48,11 @@ class BookingViewModel @Inject constructor(
                 }
 
                 BookingAction.GoToPaymentPressed -> {
-                    _effectFlow.send(BookingEffect.GoToPayment)
+                    if (isAllFieldsFilled()) {
+                        _effectFlow.send(BookingEffect.GoToPayment)
+                    } else {
+                        _effectFlow.send(BookingEffect.ShowEmptyFieldsError)
+                    }
                 }
 
                 is BookingAction.BuyerDataChanged -> {
@@ -56,6 +60,30 @@ class BookingViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    private fun isAllFieldsFilled(): Boolean {
+        with(_buyerInfo.value) {
+            if (email.isEmpty() || phoneNumber.isEmpty()) {
+                return false
+            }
+        }
+
+        _tourists.value.forEach { tourist ->
+            val infoList = listOf(
+                tourist.name,
+                tourist.secondName,
+                tourist.birthDay,
+                tourist.citizenship,
+                tourist.passportNumber,
+                tourist.passportValidityPeriod,
+            )
+            if (infoList.any { it.isEmpty() }) {
+                return false
+            }
+        }
+
+        return true
     }
 
     private fun updateBuyerData(buyerInputData: BuyerInputData) {

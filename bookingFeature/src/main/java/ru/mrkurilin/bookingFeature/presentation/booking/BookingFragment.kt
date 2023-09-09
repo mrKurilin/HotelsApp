@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.allViews
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
@@ -39,9 +41,10 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
 
     override fun onResume() {
         super.onResume()
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.booking)
-        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
-        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val activity = requireActivity() as AppCompatActivity
+        activity.supportActionBar?.title = getString(R.string.booking)
+        activity.supportActionBar?.setDisplayShowHomeEnabled(true)
+        activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onCreateView(
@@ -130,6 +133,7 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
         bookingViewModel.buyerInfoFlow.collect { buyer ->
             binding.bookingBuyerInfoBlock.phoneTextField.setText(buyer.phoneNumber)
             binding.bookingBuyerInfoBlock.emailTextField.setText(buyer.email)
+            binding.bookingBuyerInfoBlock.emailTextField.setSelection(buyer.email.length)
         }
     }
 
@@ -139,6 +143,18 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
                 BookingEffect.GoToPayment -> {
                     navigate(R.id.action_bookingFragment_to_paymentFragment)
                 }
+
+                BookingEffect.ShowEmptyFieldsError -> {
+                    showEmptyFieldsError()
+                }
+            }
+        }
+    }
+
+    private fun showEmptyFieldsError() {
+        binding.root.allViews.forEach { view ->
+            if (view is TextInputEditText && view.text?.isEmpty() == true) {
+                view.error = getString(R.string.field_should_not_be_empty)
             }
         }
     }
