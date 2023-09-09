@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
     android:animateLayoutChanges="true"
     android:background="@drawable/frame_16"
     android:backgroundTint="@color/white"
@@ -22,17 +22,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="Первый турист"
             android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="Первый турист" />
 
         <ImageButton
             android:id="@+id/input_toggle_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:src="@drawable/up"
-            android:contentDescription="@string/toggle_tourist_input_visibility" />
+            android:contentDescription="@string/toggle_tourist_input_visibility"
+            android:src="@drawable/up" />
 
     </LinearLayout>
 
@@ -53,7 +53,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="@drawable/frame_16"
-                android:backgroundTint="@color/primary_background" />
+                android:backgroundTint="@color/primary_background"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:nextFocusDown="@id/second_name_text_field" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,7 +72,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="@drawable/frame_16"
-                android:backgroundTint="@color/primary_background" />
+                android:backgroundTint="@color/primary_background"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:nextFocusDown="@id/birthday_text_field" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,7 +91,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="@drawable/frame_16"
-                android:backgroundTint="@color/primary_background" />
+                android:backgroundTint="@color/primary_background"
+                android:imeOptions="actionNext"
+                android:inputType="date"
+                android:maxLines="1"
+                android:nextFocusDown="@id/citizenship_text_field" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,7 +110,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="@drawable/frame_16"
-                android:backgroundTint="@color/primary_background" />
+                android:backgroundTint="@color/primary_background"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:nextFocusDown="@id/passport_number_text_field" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,7 +129,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="@drawable/frame_16"
-                android:backgroundTint="@color/primary_background" />
+                android:backgroundTint="@color/primary_background"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:nextFocusDown="@id/passport_validity_period_text_field" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -128,7 +148,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="@drawable/frame_16"
-                android:backgroundTint="@color/primary_background" />
+                android:backgroundTint="@color/primary_background"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

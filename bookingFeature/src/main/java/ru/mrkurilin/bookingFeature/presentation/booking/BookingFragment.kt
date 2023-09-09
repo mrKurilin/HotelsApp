@@ -20,6 +20,7 @@ import ru.mrkurilin.hotelsApp.bookingFeature.R
 import ru.mrkurilin.hotelsApp.bookingFeature.databinding.FragmentBookingBinding
 import ru.mrkurilin.hotelsApp.di.lazyViewModel
 import ru.mrkurilin.hotelsApp.di.requireSubComponentsProvider
+import ru.mrkurilin.hotelsApp.ui.hideKeyboard
 import ru.mrkurilin.navigation.navigate
 
 class BookingFragment : Fragment(R.layout.fragment_booking) {
@@ -51,6 +52,10 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.bookingLinearLayout.setOnClickListener {
+            hideKeyboard()
+        }
 
         touristsAdapter = TouristsAdapter()
 
@@ -160,23 +165,28 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
     }
 
     private fun bindBookingInfo(bookingData: BookingData) {
-        binding.bookingHeaderBlock.ratingView.setRating(bookingData.rating, bookingData.ratingName)
-        binding.bookingHeaderBlock.hotelNameTextView.text = bookingData.hotelName
-        binding.bookingHeaderBlock.hotelAdressTextView.text = bookingData.hotelAddress
+        with(binding.bookingHeaderBlock) {
+            hotelNameTextView.text = bookingData.hotelName
+            hotelAdressTextView.text = bookingData.hotelAddress
+            ratingView.setRating(bookingData.rating, bookingData.ratingName)
+        }
 
-        binding.bookingInfoBlock.departureFromTextView.text = bookingData.departure
-        binding.bookingInfoBlock.countryCityTextView.text = bookingData.arrivalCountry
-        binding.bookingInfoBlock.datesTextView.text = getString(
-            R.string.tour_dates,
-            bookingData.tourDateStart,
-            bookingData.tourDateStop,
-        )
-        binding.bookingInfoBlock.nightsCountTextView.text = getString(
-            R.string.nights_count_data, bookingData.numberOfNights
-        )
-        binding.bookingInfoBlock.hotelNameTextView.text = bookingData.hotelName
-        binding.bookingInfoBlock.roomNameTextView.text = bookingData.room
-        binding.bookingInfoBlock.nutritionTextView.text = bookingData.nutrition
+        with(binding.bookingInfoBlock) {
+            departureFromTextView.text = bookingData.departure
+            countryCityTextView.text = bookingData.arrivalCountry
+            hotelNameTextView.text = bookingData.hotelName
+            roomNameTextView.text = bookingData.room
+            nutritionTextView.text = bookingData.nutrition
+            datesTextView.text = getString(
+                R.string.tour_dates,
+                bookingData.tourDateStart,
+                bookingData.tourDateStop,
+            )
+            nightsCountTextView.text = getString(
+                R.string.nights_count_data,
+                bookingData.numberOfNights
+            )
+        }
     }
 
     override fun onDestroyView() {
