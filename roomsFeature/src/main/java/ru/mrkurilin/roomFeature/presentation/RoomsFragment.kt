@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
@@ -35,7 +36,9 @@ class RoomsFragment : Fragment(R.layout.fragment_rooms) {
 
     override fun onResume() {
         super.onResume()
-        requireActivity().actionBar?.title = navigationData as? String ?: getString(R.string.rooms)
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.rooms)
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

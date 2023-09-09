@@ -3,6 +3,7 @@ package ru.mrkurilin.hotelFeature.presentation
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
@@ -29,7 +30,9 @@ class HotelsFragment : Fragment(R.layout.fragment_hotel) {
 
     override fun onResume() {
         super.onResume()
-        requireActivity().actionBar?.title = getString(R.string.hotel)
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.hotel)
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(false)
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

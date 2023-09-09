@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -38,7 +39,9 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
 
     override fun onResume() {
         super.onResume()
-        requireActivity().actionBar?.title = getString(R.string.booking)
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.booking)
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onCreateView(
