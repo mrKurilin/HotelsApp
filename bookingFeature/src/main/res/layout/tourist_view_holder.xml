@@ -55,7 +55,7 @@
                 android:background="@drawable/frame_16"
                 android:backgroundTint="@color/primary_background"
                 android:imeOptions="actionNext"
-                android:inputType="text"
+                android:inputType="textCapWords"
                 android:maxLines="1"
                 android:nextFocusDown="@id/second_name_text_field" />
 
@@ -74,7 +74,7 @@
                 android:background="@drawable/frame_16"
                 android:backgroundTint="@color/primary_background"
                 android:imeOptions="actionNext"
-                android:inputType="text"
+                android:inputType="textCapWords"
                 android:maxLines="1"
                 android:nextFocusDown="@id/birthday_text_field" />
 
@@ -112,7 +112,7 @@
                 android:background="@drawable/frame_16"
                 android:backgroundTint="@color/primary_background"
                 android:imeOptions="actionNext"
-                android:inputType="text"
+                android:inputType="textCapWords"
                 android:maxLines="1"
                 android:nextFocusDown="@id/passport_number_text_field" />
 
@@ -150,7 +150,7 @@
                 android:background="@drawable/frame_16"
                 android:backgroundTint="@color/primary_background"
                 android:imeOptions="actionDone"
-                android:inputType="text"
+                android:inputType="date"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>

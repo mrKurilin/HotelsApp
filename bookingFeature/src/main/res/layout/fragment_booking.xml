@@ -31,8 +31,11 @@
         <ProgressBar
             android:id="@+id/booking_info_block_progress_bar"
             android:layout_width="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/blue"
+            android:indeterminateTintMode="src_atop"
             android:visibility="gone" />
 
         <include
@@ -45,11 +48,11 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/tourists_recycler_view"
             android:layout_width="match_parent"
-            android:nestedScrollingEnabled="false"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@drawable/frame_16"
             android:backgroundTint="@color/white"
+            android:nestedScrollingEnabled="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="2"
             tools:listitem="@layout/tourist_view_holder" />
@@ -69,15 +72,15 @@
             android:layout_marginTop="8dp" />
 
         <androidx.appcompat.widget.AppCompatButton
-            style="@style/TextAppearance.HotelsApp"
-            android:gravity="center"
-            android:textAllCaps="false"
             android:id="@+id/go_to_payment_button"
+            style="@style/TextAppearance.HotelsApp"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_margin="16dp"
             android:background="@drawable/frame_16"
             android:backgroundTint="@color/blue"
+            android:gravity="center"
+            android:textAllCaps="false"
             android:textColor="@color/white"
             tools:text="Оплатить 198 036 Р" />
 
