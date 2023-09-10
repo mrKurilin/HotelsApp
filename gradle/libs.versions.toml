@@ -1,5 +1,6 @@
 [versions]
 coreKtx = "1.10.1"
+coreSplashscreen = "1.0.1"
 flexbox = "3.0.0"
 kotlin = "1.9.10"
 appcompat = "1.6.1"
@@ -20,6 +21,7 @@ retrofit = "2.9.0"
 [libraries]
 androidGradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 core-ktx-1_9_0 = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+coreSplashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "flexbox" }
 kotlinGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 

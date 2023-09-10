@@ -60,4 +60,6 @@ dependencies {
     implementation(libs.kotlinSerializationCore)
     implementation(libs.kotlinSerializationJson)
     implementation(libs.bundles.network)
+
+    implementation(libs.coreSplashscreen)
 }
