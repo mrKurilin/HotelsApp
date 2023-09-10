@@ -11,7 +11,8 @@ repositories {
 dependencies {
     implementation(libs.androidGradlePlugin)
     implementation(libs.kotlinGradlePlugin)
-    implementation(libs.kotlinSerialization)
+    implementation(libs.kspGradlePlugin)
+    implementation(libs.kotlinSerializationPlugin)
 }
 
 kotlin {

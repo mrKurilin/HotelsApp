@@ -1,10 +1,13 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlinx-serialization")
+    id("com.google.devtools.ksp")
 }
 
-internal val Project.libs: VersionCatalog get() =
-    project.extensions.getByType<VersionCatalogsExtension>().named("libs")
+internal val Project.libs: VersionCatalog
+    get() =
+        project.extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 android {
     compileSdk = ProjectConfig.compileSdk
@@ -50,10 +53,18 @@ dependencies {
     implementation(libs.findLibrary("appcompat").get())
     implementation(libs.findLibrary("material").get())
 
+    implementation(libs.findLibrary("kotlinSerializationCore").get())
+    implementation(libs.findLibrary("kotlinSerializationJson").get())
+
     implementation(libs.findLibrary("coroutines").get())
 
     implementation(libs.findLibrary("navigationFragmentKtx").get())
 
     testImplementation(libs.findBundle("tests").get())
     androidTestImplementation(libs.findBundle("androidTests").get())
+
+    implementation(libs.findLibrary("dagger").get())
+    ksp(libs.findLibrary("daggerCompiler").get())
+
+    implementation(libs.findLibrary("retrofit").get())
 }

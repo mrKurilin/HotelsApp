@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/frame_16"
+    android:backgroundTint="@color/white"
+    android:padding="16dp"
+    android:stretchColumns="*"
+    android:useDefaultMargins="true">
+
+    <TableRow>
+
+        <TextView
+            style="@style/TextAppearance.HotelsApp"
+            android:text="@string/tour"
+            android:textColor="@color/ombre_grey" />
+
+        <TextView
+            android:id="@+id/tour_price_text_view"
+            style="@style/TextAppearance.HotelsApp"
+            android:gravity="end"
+            tools:text="186 600 Р" />
+
+    </TableRow>
+
+    <TableRow android:layout_marginTop="8dp">
+
+        <TextView
+            style="@style/TextAppearance.HotelsApp"
+            android:text="@string/fuel_charge"
+            android:textColor="@color/ombre_grey" />
+
+        <TextView
+            android:id="@+id/fuel_charge_text_view"
+            style="@style/TextAppearance.HotelsApp"
+            android:gravity="end"
+            tools:text="186 600 Р" />
+
+    </TableRow>
+
+    <TableRow android:layout_marginTop="8dp">
+
+        <TextView
+            style="@style/TextAppearance.HotelsApp"
+            android:text="@string/service_charge"
+            android:textColor="@color/ombre_grey" />
+
+        <TextView
+            android:id="@+id/service_charge_text_view"
+            style="@style/TextAppearance.HotelsApp"
+            android:gravity="end"
+            tools:text="186 600 Р" />
+
+    </TableRow>
+
+    <TableRow android:layout_marginTop="8dp">
+
+        <TextView
+            style="@style/TextAppearance.HotelsApp"
+            android:text="@string/to_pay"
+            android:textColor="@color/ombre_grey" />
+
+        <TextView
+            android:id="@+id/total_text_view"
+            style="@style/TextAppearance.HotelsApp"
+            android:gravity="end"
+            tools:text="186 600 Р" />
+
+    </TableRow>
+
+</TableLayout>

@@ -16,7 +16,8 @@ dependencyResolutionManagement {
 rootProject.name = "HotelsApp"
 include(":app")
 include(":hotelFeature")
-include(":hotelRoomFeature")
+include(":roomsFeature")
 include(":bookingFeature")
 include(":core:navigation")
 include(":core:di")
+include(":core:ui")

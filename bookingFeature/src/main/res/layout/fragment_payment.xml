@@ -1,7 +1,67 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp"
     tools:context="ru.mrkurilin.bookingFeature.presentation.payment.PaymentFragment">
+
+    <View
+        android:id="@+id/image_bg"
+        android:layout_width="94dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="122dp"
+        android:background="@drawable/circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/party_popper"
+        app:layout_constraintBottom_toBottomOf="@id/image_bg"
+        app:layout_constraintEnd_toEndOf="@id/image_bg"
+        app:layout_constraintStart_toStartOf="@id/image_bg"
+        app:layout_constraintTop_toTopOf="@id/image_bg" />
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/payment_header"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_bg" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/payment_text"
+        android:textAlignment="center"
+        android:textColor="@color/ombre_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/TextAppearance.HotelsApp"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:id="@+id/super_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/frame_16"
+        android:backgroundTint="@color/blue"
+        android:text="@string/payment_super"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

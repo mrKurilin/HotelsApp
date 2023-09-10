@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/frame_16"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tourist_header"
+            style="@style/TextAppearance.HotelsApp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:text="Первый турист" />
+
+        <ImageButton
+            android:id="@+id/input_toggle_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:contentDescription="@string/toggle_tourist_input_visibility"
+            android:src="@drawable/up" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tourist_input_block"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_text_field"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/frame_16"
+                android:backgroundTint="@color/primary_background"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:maxLines="1"
+                android:nextFocusDown="@id/second_name_text_field" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/second_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/second_name_text_field"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/frame_16"
+                android:backgroundTint="@color/primary_background"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:maxLines="1"
+                android:nextFocusDown="@id/birthday_text_field" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/birthday">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/birthday_text_field"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/frame_16"
+                android:backgroundTint="@color/primary_background"
+                android:imeOptions="actionNext"
+                android:inputType="date"
+                android:maxLines="1"
+                android:nextFocusDown="@id/citizenship_text_field" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/citizenship">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/citizenship_text_field"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/frame_16"
+                android:backgroundTint="@color/primary_background"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:maxLines="1"
+                android:nextFocusDown="@id/passport_number_text_field" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/passport_number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passport_number_text_field"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/frame_16"
+                android:backgroundTint="@color/primary_background"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:nextFocusDown="@id/passport_validity_period_text_field" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/passport_validity_period">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passport_validity_period_text_field"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/frame_16"
+                android:backgroundTint="@color/primary_background"
+                android:imeOptions="actionDone"
+                android:inputType="date"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
