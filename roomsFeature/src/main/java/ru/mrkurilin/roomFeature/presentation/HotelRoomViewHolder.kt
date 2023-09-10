@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexboxLayoutManager
 import ru.mrkurilin.hotelsApp.roomsFeature.databinding.HotelRoomViewHolderBinding
+import ru.mrkurilin.hotelsApp.ui.R
 import ru.mrkurilin.hotelsApp.ui.imageSlider.ImageSliderAdapter
 import ru.mrkurilin.hotelsApp.ui.peculiarities.PeculiaritiesAdapter
 import ru.mrkurilin.roomFeature.domain.model.Room
@@ -29,7 +30,10 @@ class HotelRoomViewHolder(
         imageSliderAdapter.setItems(room.imageUrls)
         peculiaritiesAdapter.setPeculiarities(room.peculiarities)
         hotelRoomViewHolderBinding.nameTextView.text = room.name
-        hotelRoomViewHolderBinding.priceBlock.priceTextView.text = room.price.toString()
         hotelRoomViewHolderBinding.priceBlock.priceForTextView.text = room.pricePer
+        hotelRoomViewHolderBinding.priceBlock.priceTextView.text = itemView.context.getString(
+            R.string.price,
+            room.price
+        )
     }
 }

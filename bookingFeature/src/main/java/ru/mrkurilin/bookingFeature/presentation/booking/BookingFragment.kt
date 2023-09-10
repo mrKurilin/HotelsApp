@@ -5,6 +5,7 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.allViews
 import androidx.core.widget.doOnTextChanged
@@ -26,6 +27,7 @@ import ru.mrkurilin.hotelsApp.di.lazyViewModel
 import ru.mrkurilin.hotelsApp.di.requireSubComponentsProvider
 import ru.mrkurilin.hotelsApp.ui.hideKeyboard
 import ru.mrkurilin.navigation.navigate
+import ru.mrkurilin.hotelsApp.ui.R as coreUiR
 
 class BookingFragment : Fragment(R.layout.fragment_booking) {
 
@@ -102,18 +104,28 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
             }
 
             emailTextField.setOnFocusChangeListener { view, hasFocus ->
-                if (
-                    view is TextInputEditText
-                    &&
-                    view.text?.isEmpty() == false
-                    &&
-                    !hasFocus
-                    &&
-                    !Patterns.EMAIL_ADDRESS.matcher(view.text.toString()).matches()
-                ) {
-                    view.error = getString(R.string.invalid_email)
+                if (view is TextInputEditText && !hasFocus) {
+                    validateEnteredEmail(view)
                 }
             }
+
+            emailTextField.setOnEditorActionListener { view, actionId, _ ->
+                if (view is TextInputEditText && actionId == EditorInfo.IME_ACTION_DONE) {
+                    validateEnteredEmail(view)
+                    hideKeyboard()
+                }
+                return@setOnEditorActionListener true
+            }
+        }
+    }
+
+    private fun validateEnteredEmail(view: TextInputEditText) {
+        if (
+            view.text?.isEmpty() == false
+            &&
+            !Patterns.EMAIL_ADDRESS.matcher(view.text.toString()).matches()
+        ) {
+            view.error = getString(R.string.invalid_email)
         }
     }
 
@@ -129,16 +141,16 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
             val totalPrice = tourPrice + fuelChargePrice + serviceChargePrice
 
             binding.bookingPaymentInfoBlock.tourPriceTextView.text = getString(
-                R.string.price, tourPrice
+                coreUiR.string.price, tourPrice
             )
             binding.bookingPaymentInfoBlock.fuelChargeTextView.text = getString(
-                R.string.price, fuelChargePrice
+                coreUiR.string.price, fuelChargePrice
             )
             binding.bookingPaymentInfoBlock.serviceChargeTextView.text = getString(
-                R.string.price, serviceChargePrice
+                coreUiR.string.price, serviceChargePrice
             )
             binding.bookingPaymentInfoBlock.totalTextView.text = getString(
-                R.string.price, totalPrice
+                coreUiR.string.price, totalPrice
             )
 
             binding.goToPaymentButton.text = getString(R.string.to_pay_price, totalPrice)

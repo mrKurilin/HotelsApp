@@ -27,14 +27,12 @@
     <string name="service_charge">Сервисный сбор</string>
     <string name="fuel_charge">Топливный сбор</string>
     <string name="to_pay">К оплате</string>
-    <string name="to_pay_price">К оплате %1$d Р</string>
+    <string name="to_pay_price">К оплате %1$d ₽</string>
     <string name="toggle_tourist_input_visibility">Показать/скрыть поля ввода данных туриста</string>
     <string name="payment_success">Заказ оплачен</string>
     <string name="booking">Бронирование</string>
     <string name="tour_dates">%1$s - %2$s</string>
     <string name="nights_count_data">%1$d ночей</string>
-    <string name="tour_price">%1$d</string>
-    <string name="price">%1$d Р</string>
     <string name="field_should_not_be_empty">Поле не должно быть пустым</string>
     <string name="invalid_email">Неверный формат почты</string>
 </resources>

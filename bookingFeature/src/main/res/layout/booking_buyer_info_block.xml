@@ -46,6 +46,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email_text_field"
             android:layout_width="match_parent"
+            android:padding="8dp"
             android:layout_height="52dp"
             android:background="@drawable/frame_16"
             android:backgroundTint="@color/primary_background"

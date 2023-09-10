@@ -3,5 +3,5 @@
     <string name="about_hotel">Об отеле</string>
     <string name="hotel">Отель</string>
     <string name="to_room_choose">К выбору номера</string>
-    <string name="price_from">От %1$d Р</string>
+    <string name="price_from">От %1$d ₽</string>
 </resources>
