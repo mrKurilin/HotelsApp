@@ -1,6 +1,5 @@
 package ru.mrkurilin.roomFeature.presentation
 
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
@@ -29,16 +28,14 @@ class RoomsFragment : Fragment(R.layout.fragment_rooms) {
     private lateinit var progressBar: ProgressBar
     private lateinit var hotelRoomsAdapter: HotelRoomsAdapter
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        roomsViewModel.loadHotelRooms(navigationData as? String)
-    }
-
     override fun onResume() {
         super.onResume()
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.rooms)
-        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
-        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val activity = requireActivity() as AppCompatActivity
+        activity.supportActionBar?.title = getString(R.string.rooms)
+        activity.supportActionBar?.setDisplayShowHomeEnabled(true)
+        activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        roomsViewModel.loadHotelRooms(navigationData as? String)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

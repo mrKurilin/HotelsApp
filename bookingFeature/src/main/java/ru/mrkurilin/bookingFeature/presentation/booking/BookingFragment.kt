@@ -46,6 +46,8 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
         activity.supportActionBar?.title = getString(R.string.booking)
         activity.supportActionBar?.setDisplayShowHomeEnabled(true)
         activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        bookingViewModel.loadData()
     }
 
     override fun onCreateView(

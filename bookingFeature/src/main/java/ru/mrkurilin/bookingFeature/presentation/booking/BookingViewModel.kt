@@ -18,7 +18,7 @@ import ru.mrkurilin.bookingFeature.presentation.booking.stateHolders.BookingStat
 import javax.inject.Inject
 
 class BookingViewModel @Inject constructor(
-    bookingApiService: BookingApiService,
+    private val bookingApiService: BookingApiService,
 ) : ViewModel() {
 
     private val _state: MutableStateFlow<BookingState> = MutableStateFlow(BookingState.Loading)
@@ -34,7 +34,7 @@ class BookingViewModel @Inject constructor(
         MutableStateFlow(listOf(Tourist(0)))
     val touristsFlow: StateFlow<List<Tourist>> = _tourists.asStateFlow()
 
-    init {
+    fun loadData() {
         viewModelScope.launch {
             _state.emit(BookingState.Loaded(bookingApiService.getBookingData()))
         }
@@ -49,6 +49,7 @@ class BookingViewModel @Inject constructor(
 
                 BookingAction.GoToPaymentPressed -> {
                     if (isAllFieldsFilled()) {
+                        _state.emit(BookingState.Loading)
                         _effectFlow.send(BookingEffect.GoToPayment)
                     } else {
                         _effectFlow.send(BookingEffect.ShowEmptyFieldsError)

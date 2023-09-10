@@ -1,8 +1,8 @@
 package ru.mrkurilin.hotelFeature.presentation.stateHolders
 
-sealed class Action {
+sealed class HotelsEffect {
 
-    data class ChoiceOfRoomsClicked(
+    data class GoToChoiceOfRooms(
         val hotelName: String
-    ) : Action()
+    ) : HotelsEffect()
 }

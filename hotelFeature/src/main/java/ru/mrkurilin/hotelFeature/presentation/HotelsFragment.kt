@@ -10,8 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
 import ru.mrkurilin.hotelFeature.di.HotelsFeatureComponentProvider
 import ru.mrkurilin.hotelFeature.presentation.adapters.HotelsAdapter
-import ru.mrkurilin.hotelFeature.presentation.stateHolders.Effect
-import ru.mrkurilin.hotelFeature.presentation.stateHolders.State
+import ru.mrkurilin.hotelFeature.presentation.stateHolders.HotelsEffect
+import ru.mrkurilin.hotelFeature.presentation.stateHolders.HotelsEvent
+import ru.mrkurilin.hotelFeature.presentation.stateHolders.HotelsState
 import ru.mrkurilin.hotelsApp.di.lazyViewModel
 import ru.mrkurilin.hotelsApp.di.requireSubComponentsProvider
 import ru.mrkurilin.hotelsApp.hotelFeature.R
@@ -30,9 +31,12 @@ class HotelsFragment : Fragment(R.layout.fragment_hotel) {
 
     override fun onResume() {
         super.onResume()
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.hotel)
-        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(false)
-        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        val activity = requireActivity() as AppCompatActivity
+        activity.supportActionBar?.title = getString(R.string.hotel)
+        activity.supportActionBar?.setDisplayShowHomeEnabled(false)
+        activity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
+        hotelsViewModel.onEvent(HotelsEvent.OnResumed)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,8 +64,7 @@ class HotelsFragment : Fragment(R.layout.fragment_hotel) {
     private suspend fun observeEffect() {
         hotelsViewModel.effectFlow.collect { effect ->
             when (effect) {
-                Effect.Idle -> {}
-                is Effect.GoToChoiceOfRooms -> {
+                is HotelsEffect.GoToChoiceOfRooms -> {
                     navigate(
                         actionId = R.id.action_hotelsFragment_to_roomsFragment,
                         data = effect.hotelName
@@ -72,15 +75,15 @@ class HotelsFragment : Fragment(R.layout.fragment_hotel) {
     }
 
     private suspend fun observeState() {
-        hotelsViewModel.state.collect { state ->
+        hotelsViewModel.hotelsState.collect { state ->
             when (state) {
-                is State.Loaded -> {
+                is HotelsState.Loaded -> {
                     hotelsAdapter.updateHotels(state.hotels)
                     progressBar.visibility = View.GONE
                     hotelsRecyclerView.visibility = View.VISIBLE
                 }
 
-                State.Loading -> {
+                HotelsState.Loading -> {
                     progressBar.visibility = View.VISIBLE
                     hotelsRecyclerView.visibility = View.GONE
                 }

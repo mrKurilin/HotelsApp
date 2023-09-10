@@ -5,13 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import ru.mrkurilin.hotelFeature.domain.model.Hotel
-import ru.mrkurilin.hotelFeature.presentation.stateHolders.Action
+import ru.mrkurilin.hotelFeature.presentation.stateHolders.HotelsAction
 import ru.mrkurilin.hotelFeature.presentation.viewHolders.HotelViewHolder
 import ru.mrkurilin.hotelsApp.hotelFeature.databinding.HotelViewHolderBinding
 import ru.mrkurilin.hotelsApp.ui.views.GenericDiffUtilCallback
 
 class HotelsAdapter(
-    private val onAction: (Action) -> Unit
+    private val onAction: (HotelsAction) -> Unit
 ) : RecyclerView.Adapter<HotelViewHolder>() {
 
     private var hotels = emptyList<Hotel>()
@@ -26,7 +26,7 @@ class HotelsAdapter(
         )
         hotelViewHolder.binding.chooseRoomButton.setOnClickListener {
             onAction(
-                Action.ChoiceOfRoomsClicked(
+                HotelsAction.ChoiceOfRoomsClicked(
                     hotels[hotelViewHolder.adapterPosition].name
                 )
             )

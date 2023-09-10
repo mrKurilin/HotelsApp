@@ -40,6 +40,7 @@ class RoomsViewModel @Inject constructor(
         viewModelScope.launch {
             when (roomsAction) {
                 is RoomsAction.GoToBookingPressed -> {
+                    _state.emit(RoomsState.Loading)
                     _effectFlow.send(
                         RoomsEffect.GoToBooking(
                             hotelName = hotelName,

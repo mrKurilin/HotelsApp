@@ -9,34 +9,40 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import ru.mrkurilin.hotelFeature.domain.usecase.GetHotelsUseCase
-import ru.mrkurilin.hotelFeature.presentation.stateHolders.Action
-import ru.mrkurilin.hotelFeature.presentation.stateHolders.Effect
-import ru.mrkurilin.hotelFeature.presentation.stateHolders.State
+import ru.mrkurilin.hotelFeature.presentation.stateHolders.HotelsAction
+import ru.mrkurilin.hotelFeature.presentation.stateHolders.HotelsEffect
+import ru.mrkurilin.hotelFeature.presentation.stateHolders.HotelsEvent
+import ru.mrkurilin.hotelFeature.presentation.stateHolders.HotelsState
 import javax.inject.Inject
 
 class HotelsViewModel @Inject constructor(
     private val getHotelsUseCase: GetHotelsUseCase,
 ) : ViewModel() {
 
-    private val _state: MutableStateFlow<State> = MutableStateFlow(State.Loading)
-    val state: StateFlow<State> = _state.asStateFlow()
+    private val _hotelsState: MutableStateFlow<HotelsState> = MutableStateFlow(HotelsState.Loading)
+    val hotelsState: StateFlow<HotelsState> = _hotelsState.asStateFlow()
 
-    private val _effectFlow: Channel<Effect> = Channel(Channel.BUFFERED)
-    val effectFlow = _effectFlow.receiveAsFlow()
+    private val _hotelsEffectFlow: Channel<HotelsEffect> = Channel(Channel.BUFFERED)
+    val effectFlow = _hotelsEffectFlow.receiveAsFlow()
 
-    init {
+    fun onAction(hotelsAction: HotelsAction) {
         viewModelScope.launch {
-            getHotelsUseCase().collect { list ->
-                _state.emit(State.Loaded(list))
+            when (hotelsAction) {
+                is HotelsAction.ChoiceOfRoomsClicked -> {
+                    _hotelsState.emit(HotelsState.Loading)
+                    _hotelsEffectFlow.send(HotelsEffect.GoToChoiceOfRooms(hotelsAction.hotelName))
+                }
             }
         }
     }
 
-    fun onAction(action: Action) {
+    fun onEvent(hotelsEvent: HotelsEvent) {
         viewModelScope.launch {
-            when (action) {
-                is Action.ChoiceOfRoomsClicked -> {
-                    _effectFlow.send(Effect.GoToChoiceOfRooms(action.hotelName))
+            when (hotelsEvent) {
+                HotelsEvent.OnResumed -> {
+                    getHotelsUseCase().collect { list ->
+                        _hotelsState.emit(HotelsState.Loaded(list))
+                    }
                 }
             }
         }
