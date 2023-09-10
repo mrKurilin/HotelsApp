@@ -78,7 +78,9 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
         setupBookingBuyerInfoBlock()
 
         binding.goToPaymentButton.setOnClickListener {
-            bookingViewModel.onAction(BookingAction.GoToPaymentPressed)
+            if (isAllFieldsFilled()) {
+                bookingViewModel.onAction(BookingAction.GoToPaymentPressed)
+            }
         }
 
         lifecycleScope.launch {
@@ -177,18 +179,6 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
                 BookingEffect.GoToPayment -> {
                     navigate(R.id.action_bookingFragment_to_paymentFragment)
                 }
-
-                BookingEffect.ShowEmptyFieldsError -> {
-                    showEmptyFieldsError()
-                }
-            }
-        }
-    }
-
-    private fun showEmptyFieldsError() {
-        binding.root.allViews.forEach { view ->
-            if (view is TextInputEditText && view.text?.isEmpty() == true) {
-                view.error = getString(R.string.field_should_not_be_empty)
             }
         }
     }
@@ -245,5 +235,16 @@ class BookingFragment : Fragment(R.layout.fragment_booking) {
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+    }
+
+    private fun isAllFieldsFilled(): Boolean {
+        var isAllFieldsFilled = true
+        binding.root.allViews.forEach { view ->
+            if (view is TextInputEditText && view.text?.isEmpty() == true) {
+                view.error = getString(R.string.field_should_not_be_empty)
+                isAllFieldsFilled = false
+            }
+        }
+        return isAllFieldsFilled
     }
 }
